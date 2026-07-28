@@ -1,0 +1,11 @@
+# EF Core generates these files via `dotnet ef migrations add`; they are never hand-edited and
+# are regenerated in this exact shape, so style/analysis rules that fight the generated code are
+# exempted here rather than suppressed inline (which `dotnet ef` would just strip on regeneration).
+[*.cs]
+dotnet_diagnostic.IDE0161.severity = none
+dotnet_diagnostic.CA1861.severity = none
+# `dotnet ef` writes these files with the OS-native line ending (CRLF on Windows) and a UTF-8 BOM,
+# regardless of the repo-wide `end_of_line = lf` / `charset = utf-8` settings — match reality
+# instead of fighting the generator.
+end_of_line = crlf
+charset = utf-8-bom

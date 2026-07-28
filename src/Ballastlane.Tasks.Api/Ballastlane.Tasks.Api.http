@@ -1,0 +1,6 @@
+@Ballastlane.Tasks.Api_HostAddress = http://localhost:5276
+
+GET {{Ballastlane.Tasks.Api_HostAddress}}/health
+Accept: application/json
+
+###

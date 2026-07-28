@@ -1,0 +1,59 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+
+[*.cs]
+indent_size = 4
+
+[*.{json,yml,yaml,ts,html,scss,css}]
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+
+# ---------------------------------------------------------------------------
+# C# language and style conventions
+# ---------------------------------------------------------------------------
+[*.cs]
+
+# Namespaces
+csharp_style_namespace_declarations = file_scoped:warning
+
+# var usage: only when the type is apparent from the right-hand side
+csharp_style_var_for_built_in_types = false:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+csharp_style_var_elsewhere = false:suggestion
+
+# Braces are required for all control structures
+csharp_prefer_braces = true:warning
+
+# using directives
+dotnet_sort_system_directives_first = true
+dotnet_separate_import_directive_groups = false
+
+# Field naming: no custom underscore-prefix rule. Increment 0 originally required underscore-
+# prefixed private fields, but Sprint 2 leans heavily on C# 12 primary constructors (the modern,
+# recommended pattern) for DI-style dependencies — `dotnet format`'s naming analyzer treats a
+# primary constructor parameter captured for use in the class body as a "field" for naming-rule
+# purposes, so enforcing an underscore prefix here would mean renaming every captured constructor
+# parameter to `_taskRepository` etc., which is not idiomatic primary-constructor style and reads
+# as though a field were declared when none is. Deferring to the language's own convention instead.
+
+# Nullable reference type analysis is respected project-wide (see Directory.Build.props)
+dotnet_diagnostic.CS8600.severity = warning
+dotnet_diagnostic.CS8602.severity = warning
+dotnet_diagnostic.CS8603.severity = warning
+dotnet_diagnostic.CS8604.severity = warning
+
+# ---------------------------------------------------------------------------
+# Test projects: xUnit/BDD-style test method names ("Method_Should_DoX") are the
+# established convention and are intentionally exempt from the general no-underscore
+# naming rule (CA1707). This does not weaken correctness or nullability analysis.
+# ---------------------------------------------------------------------------
+[tests/**/*.cs]
+dotnet_diagnostic.CA1707.severity = none
