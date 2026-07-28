@@ -1,8 +1,10 @@
 # Original Prompt — Increment 0: Repository and Architectural Baseline
 
-This file preserves the prompt provided for Increment 0.
+This file preserves the prompt provided to Claude Code for Increment 0.
 [`docs/reports/final-report-1-increment-0.md`](final-report-1-increment-0.md), which reports what
-was actually built in response to it. See also the companion prompts for
+was actually built in response to it. 
+
+See also the companion prompts for
 [Sprint 2](prompt-2-sprint-2-backend.md) and
 [Sprint 3](prompt-3-sprint-3-angular.md).
 

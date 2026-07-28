@@ -1,6 +1,6 @@
 # Original Prompt — Sprint 3: Angular Authentication and Task CRUD
 
-This file preserves the prompt provided for Sprint 3.
+This file preserves the prompt provided to Claude Code for Sprint 3.
 
 [`docs/reports/final-report-3-sprint-3-angular.md`](final-report-3-sprint-3-angular.md), which
 reports what was actually built in response to it. 

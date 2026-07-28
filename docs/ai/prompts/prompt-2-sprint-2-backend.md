@@ -1,6 +1,6 @@
 # Original Prompt — Sprint 2: Complete Backend Implementation
 
-This file preserves the prompt provided for Sprint 2.
+This file preserves the prompt provided to Claude Code for Sprint 2.
 
 [`docs/reports/final-report-2-sprint-2-backend.md`](final-report-2-sprint-2-backend.md), which
 reports what was actually built in response to it. 

@@ -1,6 +1,6 @@
 # Final Report — Increment 0: Repository and Architectural Baseline
 
-This is the actual final report delivered at the end of Increment 0, in the response format that
+This is the actual final report delivered at the end of Increment 0 reported by Claude Code in the response format that
 [the original prompt](original-prompt-1-increment-0.md) required (§22: Summary, Repository
 structure, Project dependency graph, Files created, Packages added, Architecture rules implemented,
 Documentation created, Validation commands and results, Deviations or limitations, Git status,

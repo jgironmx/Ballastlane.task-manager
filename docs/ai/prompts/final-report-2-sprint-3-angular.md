@@ -1,6 +1,6 @@
 # Final Report — Sprint 3: Angular Authentication and Task CRUD Frontend
 
-This report covers Sprint 3, delivered in response to
+This report covers Sprint 3, delivered by Claude Code in response to
 [the original prompt](original-prompt-3-sprint-3-angular.md) — the Angular frontend (auth +
 task CRUD) wired to the real Sprint 2 backend, with only minimal, justified backend changes.
 

@@ -1,6 +1,6 @@
 # Final Report — Sprint 2: Backend Implementation
 
-This report covers Sprint 2, delivered in response to
+This report covers Sprint 2, delivered by Claude Code in response to
 [the original prompt](original-prompt-2-sprint-2-backend.md) — the full Clean Architecture backend
 (Domain/Application/Infrastructure/API), ASP.NET Core Identity + JWT authentication, EF Core/SQL
 Server persistence, task CRUD, seed data, and automated tests. No Angular work was in scope. 
