@@ -22,7 +22,7 @@ The realistic options are `localStorage`, `sessionStorage`, an in-memory-only st
 Rationale:
 
 * It survives a browser refresh within the same tab (unlike an in-memory-only store, which would
-  force a re-login on every reload — poor UX for a demo/interview exercise).
+  force a re-login on every reload — poor UX for a demo exercise).
 * It is cleared automatically when the tab/browser session ends — a materially smaller persistence
   window than `localStorage`, which survives indefinitely until explicitly cleared.
 * It stays simple: no cookie attributes, no CSRF token dance, no server-side session store — proportional

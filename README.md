@@ -482,7 +482,7 @@ by ChatGPT. Scoped implementation tasks were executed with Claude Code. Final de
 architecture, security, validation, and acceptance remained the developer's responsibility
 throughout — no generated change was accepted automatically. Acceptance was based on code review,
 builds, unit tests, integration tests, architecture tests, vulnerability checks, and live validation
-against the running application. See [`docs/ai/`](docs/ai/) for the full, non-fabricated evidence
+against the running application. See [`docs/ai/`](docs/ai/) for the evidence
 trail:
 
 * [`docs/ai/01-development-workflow.md`](docs/ai/01-development-workflow.md) — the division of labor

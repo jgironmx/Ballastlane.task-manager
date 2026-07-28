@@ -30,8 +30,7 @@ documentation.
 
 **Microservices.** Rejected. The application has one bounded context (personal task management) and
 one team. Microservices would add network boundaries, distributed transactions, service discovery, and
-deployment complexity with no corresponding benefit at this scale — pure accidental complexity for an
-interview exercise.
+deployment complexity with no corresponding benefit at this scale — pure accidental complexity for an exercise.
 
 **Single-project layered application** (one project with folders for controllers, services, data
 access). Rejected. Without separate assemblies, dependency direction is only a convention that the
