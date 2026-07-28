@@ -1,0 +1,44 @@
+<form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+  <div class="field">
+    <label for="task-title">Title</label>
+    <input
+      id="task-title"
+      type="text"
+      formControlName="title"
+      maxlength="200"
+      [attr.aria-invalid]="form.controls.title.invalid && form.controls.title.touched"
+    />
+    <app-field-error
+      id="task-title-error"
+      [message]="
+        form.controls.title.touched && form.controls.title.hasError('required')
+          ? 'Title is required.'
+          : form.controls.title.touched && form.controls.title.hasError('maxlength')
+            ? 'Title cannot exceed 200 characters.'
+            : null
+      "
+    />
+  </div>
+
+  <div class="field">
+    <label for="task-description">Description</label>
+    <textarea id="task-description" formControlName="description" rows="4" maxlength="2000"></textarea>
+    <app-field-error
+      id="task-description-error"
+      [message]="form.controls.description.touched && form.controls.description.hasError('maxlength') ? 'Description cannot exceed 2,000 characters.' : null"
+    />
+  </div>
+
+  <div class="field">
+    <label for="task-due-date">Due date</label>
+    <input id="task-due-date" type="date" formControlName="dueDate" [attr.aria-invalid]="form.controls.dueDate.invalid && form.controls.dueDate.touched" />
+    <app-field-error
+      id="task-due-date-error"
+      [message]="form.controls.dueDate.touched && form.controls.dueDate.hasError('pastDate') ? 'Due date cannot be earlier than today.' : null"
+    />
+  </div>
+
+  <button type="submit" [disabled]="submitting()">
+    {{ submitting() ? 'Saving…' : submitLabel() }}
+  </button>
+</form>

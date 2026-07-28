@@ -1,0 +1,12 @@
+main {
+  min-height: calc(100vh - 4rem);
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+main.centered {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

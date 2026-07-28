@@ -1,0 +1,113 @@
+<section class="auth-card">
+  <h1>Create an account</h1>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+    <div class="field">
+      <label for="register-first-name">First name</label>
+      <input
+        id="register-first-name"
+        type="text"
+        formControlName="firstName"
+        autocomplete="given-name"
+        [attr.aria-invalid]="form.controls.firstName.invalid && form.controls.firstName.touched"
+      />
+      <app-field-error
+        id="register-first-name-error"
+        [message]="form.controls.firstName.touched && form.controls.firstName.invalid ? 'First name is required.' : null"
+      />
+    </div>
+
+    <div class="field">
+      <label for="register-last-name">Last name</label>
+      <input
+        id="register-last-name"
+        type="text"
+        formControlName="lastName"
+        autocomplete="family-name"
+        [attr.aria-invalid]="form.controls.lastName.invalid && form.controls.lastName.touched"
+      />
+      <app-field-error
+        id="register-last-name-error"
+        [message]="form.controls.lastName.touched && form.controls.lastName.invalid ? 'Last name is required.' : null"
+      />
+    </div>
+
+    <div class="field">
+      <label for="register-email">Email</label>
+      <input
+        id="register-email"
+        type="email"
+        formControlName="email"
+        autocomplete="email"
+        [attr.aria-invalid]="form.controls.email.invalid && form.controls.email.touched"
+      />
+      <app-field-error
+        id="register-email-error"
+        [message]="
+          form.controls.email.touched && form.controls.email.hasError('required')
+            ? 'Email is required.'
+            : form.controls.email.touched && form.controls.email.hasError('email')
+              ? 'Enter a valid email address.'
+              : null
+        "
+      />
+    </div>
+
+    <div class="field">
+      <label for="register-password">Password</label>
+      <input
+        id="register-password"
+        type="password"
+        formControlName="password"
+        autocomplete="new-password"
+        [attr.aria-describedby]="'register-password-hint'"
+        [attr.aria-invalid]="form.controls.password.invalid && form.controls.password.touched"
+      />
+      <p id="register-password-hint" class="hint">
+        At least 8 characters, with an uppercase letter, a lowercase letter, and a digit.
+      </p>
+      <app-field-error
+        id="register-password-error"
+        [message]="form.controls.password.touched && form.controls.password.invalid ? 'Password does not meet the requirements above.' : null"
+      />
+    </div>
+
+    <div class="field">
+      <label for="register-confirm-password">Confirm password</label>
+      <input
+        id="register-confirm-password"
+        type="password"
+        formControlName="confirmPassword"
+        autocomplete="new-password"
+        [attr.aria-invalid]="form.controls.confirmPassword.invalid && form.controls.confirmPassword.touched"
+      />
+      <app-field-error
+        id="register-confirm-password-error"
+        [message]="
+          form.controls.confirmPassword.touched && form.controls.confirmPassword.hasError('required')
+            ? 'Please confirm your password.'
+            : form.controls.confirmPassword.touched && form.controls.confirmPassword.hasError('passwordMismatch')
+              ? 'Passwords do not match.'
+              : null
+        "
+      />
+    </div>
+
+    @if (errorMessage(); as message) {
+      <p class="server-error" role="alert">{{ message }}</p>
+      @if (errorDetails(); as details) {
+        <ul class="server-error-details">
+          @for (detail of details; track detail) {
+            <li>{{ detail }}</li>
+          }
+        </ul>
+      }
+    }
+
+    <button type="submit" [disabled]="submitting()">
+      {{ submitting() ? 'Creating account…' : 'Create account' }}
+    </button>
+  </form>
+
+  <p class="switch-link">Already have an account? <a routerLink="/login">Sign in</a></p>
+</section>

@@ -1,0 +1,44 @@
+form {
+  max-width: 32rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin-bottom: 1.25rem;
+}
+
+.field label {
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.field input,
+.field textarea {
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--color-border, #ccc);
+  background: var(--color-surface, #fff);
+  font-family: inherit;
+}
+
+.field input[aria-invalid='true'],
+.field textarea[aria-invalid='true'] {
+  border-color: var(--color-error, #b3261e);
+}
+
+button[type='submit'] {
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.375rem;
+  border: none;
+  background: var(--color-focus, #1a56db);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button[type='submit']:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

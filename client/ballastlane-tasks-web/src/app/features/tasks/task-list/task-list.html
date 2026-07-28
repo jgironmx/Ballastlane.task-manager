@@ -1,0 +1,118 @@
+<section class="task-list-page">
+  <div class="page-header">
+    <h1>Your tasks</h1>
+    <a routerLink="/tasks/new" class="button primary">+ New task</a>
+  </div>
+
+  <form class="filters" (ngSubmit)="onSearchSubmit()" novalidate>
+    <div class="filter">
+      <label for="status-filter">Status</label>
+      <select
+        id="status-filter"
+        [ngModel]="statusFilter()"
+        (ngModelChange)="statusFilter.set($event); onStatusFilterChange()"
+        name="statusFilter"
+      >
+        <option value="">All</option>
+        @for (status of statuses; track status) {
+          <option [value]="status">{{ status }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="filter search">
+      <label for="search-input">Search</label>
+      <input
+        id="search-input"
+        type="search"
+        [ngModel]="searchInput()"
+        (ngModelChange)="searchInput.set($event)"
+        name="searchInput"
+        placeholder="Search by title…"
+      />
+    </div>
+
+    <button type="submit">Search</button>
+  </form>
+
+  @if (loading()) {
+    <app-loading-indicator label="Loading tasks…" />
+  } @else if (errorMessage(); as message) {
+    <div class="error-state" role="alert">
+      <p>{{ message }}</p>
+      <button type="button" (click)="load()">Retry</button>
+    </div>
+  } @else if (tasks().length === 0) {
+    <app-empty-state message="No tasks found.">
+      <a routerLink="/tasks/new" class="button primary">Create your first task</a>
+    </app-empty-state>
+  } @else {
+    <ul class="task-list" role="list">
+      <li class="task-row header-row" aria-hidden="true">
+        <span>Title</span>
+        <span>Status</span>
+        <span>Due date</span>
+        <span>Actions</span>
+      </li>
+
+      @for (task of tasks(); track task.id) {
+        <li class="task-row">
+          <div class="cell title-cell">
+            <span class="row-label">Title</span>
+            <span class="title">{{ task.title }}</span>
+            @if (task.description) {
+              <span class="description">{{ task.description }}</span>
+            }
+          </div>
+
+          <div class="cell">
+            <span class="row-label">Status</span>
+            <app-task-status-badge [status]="task.status" />
+            <label class="visually-hidden" [for]="'status-select-' + task.id"
+              >Change status for {{ task.title }}</label
+            >
+            <select
+              [id]="'status-select-' + task.id"
+              [ngModel]="task.status"
+              (ngModelChange)="changeStatus(task, $event)"
+              [disabled]="updatingStatusId() === task.id"
+              name="status-{{ task.id }}"
+            >
+              @for (status of statuses; track status) {
+                <option [value]="status">{{ status }}</option>
+              }
+            </select>
+          </div>
+
+          <div class="cell">
+            <span class="row-label">Due date</span>
+            <span>{{ formatDateOnly(task.dueDate) }}</span>
+          </div>
+
+          <div class="cell actions">
+            <span class="row-label">Actions</span>
+            <a [routerLink]="['/tasks', task.id, 'edit']" class="button" [attr.aria-label]="'Edit ' + task.title">Edit</a>
+            <button
+              type="button"
+              class="button danger"
+              [disabled]="deletingId() === task.id"
+              [attr.aria-label]="'Delete ' + task.title"
+              (click)="requestDelete(task)"
+            >
+              Delete
+            </button>
+          </div>
+        </li>
+      }
+    </ul>
+  }
+
+  <app-confirmation-dialog
+    [open]="pendingDeleteTask() !== null"
+    title="Delete task"
+    [message]="'Delete \'' + (pendingDeleteTask()?.title ?? '') + '\'? This cannot be undone.'"
+    confirmLabel="Delete"
+    (confirm)="confirmDelete()"
+    (cancel)="cancelDelete()"
+  />
+</section>

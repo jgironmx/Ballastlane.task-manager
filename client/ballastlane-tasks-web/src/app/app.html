@@ -1,0 +1,9 @@
+@if (authStore.isAuthenticated()) {
+  <app-header />
+}
+
+<main [class.centered]="!authStore.isAuthenticated()">
+  <router-outlet />
+</main>
+
+<app-notification-host />
