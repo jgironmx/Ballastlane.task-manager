@@ -25,10 +25,10 @@ Final decisions on architecture, security, validation, and technical review were
 
 ## Initial Prompts
 
-* [`prompts/prompt-0-initial-chatgpt-prompt.md`](prompt-0-initial-chatgpt-prompt.md) — Initial prompt provided to ChatGPT for the architecture definition.
-* [`prompts/prompt-1-increment-0.md`](prompt-1-increment-0.md) — Sprint 2: Repository and Architectural Baseline.
-* [`prompts/prompt-2-sprint-2-backend.md`](prompt-2-sprint-2-backend.md) — Sprint 2: Complete Backend Implementation
-* [`prompts/prompt-3-sprint-3-angular.md`](prompt-3-sprint-3-angular.md) — Sprint 3: Angular Authentication and Task CRUD
+* [`prompts/prompt-0-initial-chatgpt-prompt.md`](prompts/prompt-0-initial-chatgpt-prompt.md) — Initial prompt provided to ChatGPT for the architecture definition.
+* [`prompts/prompt-1-increment-0.md`](prompts/prompt-1-increment-0.md) — Sprint 2: Repository and Architectural Baseline.
+* [`prompts/prompt-2-sprint-2-backend.md`](prompts/prompt-2-sprint-2-backend.md) — Sprint 2: Complete Backend Implementation
+* [`prompts/prompt-3-sprint-3-angular.md`](prompts/prompt-3-sprint-3-angular.md) — Sprint 3: Angular Authentication and Task CRUD
 
 
 ## Evidence files

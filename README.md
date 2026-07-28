@@ -485,20 +485,13 @@ builds, unit tests, integration tests, architecture tests, vulnerability checks,
 against the running application. See [`docs/ai/`](docs/ai/) for the evidence
 trail:
 
-* [`docs/prompts/prompt-0-initial-chatgpt-prompt.md`](prompt-0-initial-chatgpt-prompt.md) — Initial prompt provided to ChatGPT for the architecture definition.
-* [`docs/prompts/prompt-1-increment-0.md`](prompt-1-increment-0.md) — Sprint 2: Repository and Architectural Baseline.
-* [`docs/prompts/prompt-2-sprint-2-backend.md`](prompt-2-sprint-2-backend.md) — Sprint 2: Complete Backend Implementation.
-* [`docs/prompts/prompt-3-sprint-3-angular.md`](prompt-3-sprint-3-angular.md) — Sprint 3: Angular Authentication and Task CRUD.
-* [`docs/prompts/docs/ai/01-development-workflow.md`](docs/ai/01-development-workflow.md) — the division of labor
+* [`docs/ai/prompts/prompt-0-initial-chatgpt-prompt.md`](docs/prompts/prompt-0-initial-chatgpt-prompt.md) — Initial prompt provided to ChatGPT for the architecture definition.
+* [`docs/ai/prompts/prompt-1-increment-0.md`](docs/ai/prompts/prompt-1-increment-0.md) — Sprint 2: Repository and Architectural Baseline.
+* [`docs/ai/prompts/prompt-2-sprint-2-backend.md`](docs/ai/prompts/prompt-2-sprint-2-backend.md) — Sprint 2: Complete Backend Implementation.
+* [`docs/ai/prompts/prompt-3-sprint-3-angular.md`](docs/ai/prompts/prompt-3-sprint-3-angular.md) — Sprint 3: Angular Authentication and Task CRUD.
+* [`docs/ai/prompts/docs/ai/01-development-workflow.md`](docs/ai/prompts/01-development-workflow.md) — the division of labor
   between ChatGPT and Claude Code, and representative excerpts of the prompts used to direct
   implementation work.
-* [`docs/ai/02-representative-output.md`](docs/ai/02-representative-output.md) — representative
-  generated code, before/after, for real defects.
-* [`docs/ai/03-review-findings.md`](docs/ai/03-review-findings.md) — issues actually found during
-  review.
-* [`docs/ai/04-corrections.md`](docs/ai/04-corrections.md) — what was changed in response, and why.
-* [`docs/ai/05-validation-results.md`](docs/ai/05-validation-results.md) — actual build/test/format/
-  audit command output validating the corrected code.
 
 ## 25. Manual verification
 
