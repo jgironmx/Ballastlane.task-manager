@@ -4,8 +4,8 @@ This directory records how AI assistance was used during this project.
 
 ## Workflow
 
-Architectural analysis, delivery planning, acceptance criteria, were supported by ChatGPT.
-Scoped implementation tasks were executed with Claude Code. 
+Architectural analysis, delivery planning, and acceptance criteria, were supported by ChatGPT in multiples iterations.
+Scoped implementation tasks were executed with Claude Code providing a prompt in each iteration. 
 Final decisions on architecture, security, validation, and technical review were supported, and acceptance remained the developer's responsibility throughout.
 
 ## Ground rules
@@ -25,10 +25,10 @@ Final decisions on architecture, security, validation, and technical review were
 
 ## Initial Prompts
 
-* [`prompt-0-initial-chatgpt-prompt.md`](prompt-0-initial-chatgpt-prompt.md) — Initial prompt provided to ChatGPT for the architecture definition.
-* [`prompt-1-increment-0.md`](prompt-1-increment-0.md) — Sprint 2: Repository and Architectural Baseline.
-* [`prompt-2-sprint-2-backend.md`](prompt-2-sprint-2-backend.md) — Sprint 2: Complete Backend Implementation
-* [`prompt-3-sprint-3-angular.md`](prompt-3-sprint-3-angular.md) — Sprint 3: Angular Authentication and Task CRUD
+* [`prompts/prompt-0-initial-chatgpt-prompt.md`](prompt-0-initial-chatgpt-prompt.md) — Initial prompt provided to ChatGPT for the architecture definition.
+* [`prompts/prompt-1-increment-0.md`](prompt-1-increment-0.md) — Sprint 2: Repository and Architectural Baseline.
+* [`prompts/prompt-2-sprint-2-backend.md`](prompt-2-sprint-2-backend.md) — Sprint 2: Complete Backend Implementation
+* [`prompts/prompt-3-sprint-3-angular.md`](prompt-3-sprint-3-angular.md) — Sprint 3: Angular Authentication and Task CRUD
 
 
 ## Evidence files

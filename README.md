@@ -414,7 +414,7 @@ project (see [`docs/ai/05-validation-results.md`](docs/ai/05-validation-results.
   actual browser DOM/console check. This is a real gap, not a scope choice. No manual browser
   verification has been recorded as passed — [`docs/qa/manual-verification-checklist.md`](docs/qa/manual-verification-checklist.md)
   is the outstanding checklist, and [`docs/screenshots/`](docs/screenshots/) contains a manual
-  capture checklist, in lieu of fabricated screenshots or unverified claims.
+  capture checklist.
 * No refresh tokens, email confirmation, password reset, or MFA (explicitly out of scope).
 * No production backend has actually been deployed — the relative-`/api` strategy (§21) is validated
   by design and by test, not by an actual production deployment.
@@ -478,14 +478,18 @@ See [`docs/decisions/`](docs/decisions/):
 ## 24. AI-assisted engineering workflow
 
 Architectural analysis, delivery planning, acceptance criteria, and technical review were supported
-by ChatGPT. Scoped implementation tasks were executed with Claude Code. Final decisions on
+by ChatGPT in mutiples iterations and sprints. Scoped implementation tasks were executed with Claude Code. Final decisions on
 architecture, security, validation, and acceptance remained the developer's responsibility
-throughout — no generated change was accepted automatically. Acceptance was based on code review,
+throughout, no generated change was accepted automatically. Acceptance was based on code review,
 builds, unit tests, integration tests, architecture tests, vulnerability checks, and live validation
 against the running application. See [`docs/ai/`](docs/ai/) for the evidence
 trail:
 
-* [`docs/ai/01-development-workflow.md`](docs/ai/01-development-workflow.md) — the division of labor
+* [`docs/prompts/prompt-0-initial-chatgpt-prompt.md`](prompt-0-initial-chatgpt-prompt.md) — Initial prompt provided to ChatGPT for the architecture definition.
+* [`docs/prompts/prompt-1-increment-0.md`](prompt-1-increment-0.md) — Sprint 2: Repository and Architectural Baseline.
+* [`docs/prompts/prompt-2-sprint-2-backend.md`](prompt-2-sprint-2-backend.md) — Sprint 2: Complete Backend Implementation.
+* [`docs/prompts/prompt-3-sprint-3-angular.md`](prompt-3-sprint-3-angular.md) — Sprint 3: Angular Authentication and Task CRUD.
+* [`docs/prompts/docs/ai/01-development-workflow.md`](docs/ai/01-development-workflow.md) — the division of labor
   between ChatGPT and Claude Code, and representative excerpts of the prompts used to direct
   implementation work.
 * [`docs/ai/02-representative-output.md`](docs/ai/02-representative-output.md) — representative
